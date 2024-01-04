@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html> 
+<head>
+  <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+  <!--  CSS File     -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet2">
+  <link rel="stylesheet" type="text/css" href= {% static "/css/style.css" %}>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+  crossorigin="anonymous" />
+  
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+ 
+</head>
+
+<style>
+  
+  .nav-pills .nav-link {
+    color: #000000; 
+  }
+  .nav-pills .nav-link:hover {
+    color: #00ff00; 
+  }
+  body{
+    background-image: url("{% static 'images/background.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+  }
+</style>
+{% block content %}
+<body>
+  <nav class="navbar navbar-custom"> 
+    <img  src= "{% static 'images/iit.png' %}"  >
+    <a class="navbar-brand" href="#">  BridgeSCAN    
+    </a> 
+     
+   <img src= "{% static 'images/cdac.png' %}" >  </nav>
+   <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-secondary">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <li class="nav-item">
+                  <a href="#" class="nav-link align-middle px-0">
+                    <i class='fas fa-user-check'></i>
+                      <span class="ms-1 d-none d-sm-inline">User Privileges</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class='fas fa-cogs'></i>
+                      <span class="ms-1 d-none d-sm-inline">Configuration</span>
+                  </a>
+                  <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                      <li class="w-100">
+                          <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class='fas fa-poll'></i>
+                              <span class="ms-1 d-none d-sm-inline">Analysis</span>
+                          </a>
+                          <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#submenu1">
+                              <li class="w-100">
+                                  <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                    <i class='fas fa-file-alt'></i>
+                                      <span class="ms-1 d-none d-sm-inline">Report</span>
+                                  </a>
+                                  <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#submenu2">
+                                      <!-- Add your nested menu items here -->
+                                  </ul>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+          
+
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+</body>
+</html>
